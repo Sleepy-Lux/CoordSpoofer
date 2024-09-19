@@ -9,7 +9,9 @@
   > 2 clients with same seed and build version will see the same coordinates
 - Commands
   > `setCoordSeed` - Set the coordinate spoofer seed to a new seed
+  > 
   > `getCoordSeed` - Get the current coordinate spoofer seed
+  > 
   > `toggleCoordSpoofer` - Enable/Disabled the spoofer functionality
   
 ### Why is source not working?
