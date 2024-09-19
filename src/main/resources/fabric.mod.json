@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "id": "coordspoofer",
+  "version": "${version}",
+  "name": "CoordSpoofer",
+  "description": "Spoof your coordinates so you can stay on track and hidden",
+  "authors": [],
+  "contact": {},
+  "license": "All-Rights-Reserved",
+  "icon": "assets/coordspoofer/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "uk.sleepylux.coordspoofer.client.CoordspooferClient"
+    ],
+    "main": [
+      "uk.sleepylux.coordspoofer.Coordspoofer"
+    ]
+  },
+  "mixins": [
+    "coordspoofer.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
