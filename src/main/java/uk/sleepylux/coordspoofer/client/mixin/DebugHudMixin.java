@@ -7,7 +7,6 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import uk.sleepylux.coordspoofer.client.CoordspooferClient;
-import uk.sleepylux.coordspoofer.client.MathSecret;
 
 import java.util.List;
 import java.util.Locale;
