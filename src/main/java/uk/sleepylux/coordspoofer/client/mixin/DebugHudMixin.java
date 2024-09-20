@@ -7,6 +7,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import uk.sleepylux.coordspoofer.client.CoordspooferClient;
+import uk.sleepylux.coordspoofer.client.secret.MathSecret;
 
 import java.util.List;
 import java.util.Locale;
@@ -21,10 +22,11 @@ public class DebugHudMixin {
         if (absolute_seed != CoordspooferClient.coord_seed)
             positive = false;
 
-        return (positive) ? num + MathSecret.MathSecret(num, multiplier) : num - MathSecret.MathSecret(num, multiplier);
+        return (positive) ? num + MathSecret.MathSecret(CoordspooferClient.coord_seed, multiplier)
+                : num - MathSecret.MathSecret(CoordspooferClient.coord_seed, multiplier);
     }
 
-    @Inject(method = "getLeftText", at = @At("RETURN"), cancellable = true)
+    @Inject(method = "getLeftText", at = @At("RETURN"), cancellable = true, order = 9999)
     public void modify_debug_screen(CallbackInfoReturnable<List<String>> info) {
         if (!CoordspooferClient.enabled) return;
 
